@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  node-app:
+    container_name: express-node-app-container
+    build: . 
+    volumes:
+    - ./src:/app/src:ro
+    ports:
+    - "4000:5000"
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - ./.env
+
+
+      
