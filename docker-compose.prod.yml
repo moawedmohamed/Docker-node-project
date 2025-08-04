@@ -1,13 +1,10 @@
 version: "3.3"
 services:
   node-app:
-    container_name: express-node-app-container
-    build:
+    build: 
       context: .
-      dockerfile: Dockerfile.prod
-    ports:
-      - "4000:5000"
+      args:
+        - NODE_ENV=production
     environment:
       - NODE_ENV=production
-    env_file:
-      - ./.env
+    command: ["npm", "run","start"]
