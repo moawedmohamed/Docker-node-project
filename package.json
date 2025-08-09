@@ -4,17 +4,25 @@
   "main": "server.ts",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon --legacy-watch",
     "build": "tsc",
+    "build:css": "npx tailwindcss -i ./public/input.css -o ./public/output.css --watch",
     "start": "node dist/src/server.js"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "mongoose": "^8.17.0"
+    "mongoose": "^8.17.0",
+    "multer": "^2.0.2",
+    "pug": "^3.0.3",
+    "redis": "^5.8.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "autoprefixer": "^10.4.21",
     "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
