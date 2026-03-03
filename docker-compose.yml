@@ -33,5 +33,11 @@ services:
       - mongo
   redis:
     image: redis
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "8080:80"
+    env_file:
+      - ./.env
 volumes:
   mongo-db:
